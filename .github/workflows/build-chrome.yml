@@ -1,0 +1,82 @@
+name: build portable chrome
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1,15 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get URL
+        run: |
+          repack() {
+            local chpp_url="$1"
+            local chrome_url="$2"
+            curl -Lo chpp.bin "$chpp_url"
+            7z x chpp.bin x64
+            curl -o ch.bin "$chrome_url"
+            7z x ch.bin
+            7z x chrome.7z
+            curl -Lowt.zip https://github.com/coo11/chrofox/releases/download/win_tools/tools.zip
+            7z x wt.zip
+            cp ./x64/App/* ./Chrome-bin
+            7z a -mm=Deflate -mfb=258 -mpass=15 -r Chrome_Plus.zip ./x64/App/*
+            mkdir -p ./Utils
+            mv *.exe -t ./Utils
+            mv ./Chrome-bin ./App
+            7z a -mx9 Chrome_Portable.7z ./App ./Utils/ ./src/update.cmd
+          }
+
+          processing() {
+            local arch="$1"
+            local ap="$2"
+            local chpp_resp chpp_url chpp_ver body resp
+            chpp_resp=$(curl -s "https://api.github.com/repos/Bush2021/chrome_plus/releases/latest")
+            chpp_url=$(echo "$chpp_resp" | grep "browser_download_url" | head -n 1 | awk -F '"' '{print $4}')
+            chpp_ver=$(echo "$chpp_resp" | grep "tag_name" | head -n 1 | awk -F '"' '{print $4}')
+            echo "CHROME_PLUS VERSION: \`$chpp_ver\`"
+
+            body=$(cat <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <request protocol="3.0" version="1.3.23.9" shell_version="1.3.21.103" ismachine="0" sessionid="{3597644B-2952-4F92-AE55-D315F45F80A5}" installsource="ondemandcheckforupdate" requestid="{CD7523AD-A40D-49F4-AEEF-8C114B804658}" dedup="cr">
+            <hw sse="1" sse2="1" sse3="1" ssse3="1" sse41="1" sse42="1" avx="1" physmemory="12582912" />
+            <os platform="win" version="10.0" arch="$arch" />
+            <app appid="{8A69D345-D564-463C-AFF1-A69D9E530F96}" ap="$ap">
+              <updatecheck />
+            </app>
+          </request>
+          EOF
+          )
+            resp=$(curl -sX POST https://tools.google.com/service/update2 -H "Content-Type: application/xml" -d "$body")
+            local regex="(https://dl\.google\.com[^\"]+).* run=\"([^\"]+).* Version=\"([^\"]+).* hash=\"([^\"]+)\" hash_sha256=\"([^\"]+)"
+            if [[ $resp =~ $regex ]]; then
+              repack "$chpp_url" "${BASH_REMATCH[1]}${BASH_REMATCH[2]}" > /dev/null 2>&1
+              echo "CHROME VERSION: \`${BASH_REMATCH[3]}\`"
+            fi
+            }
+
+          RELEASE_DESC="## Stable x64
+          $(processing x64 x64-stable-multi-chrome)"
+
+          echo 'RELEASE_DESC<<EOF' >> $GITHUB_ENV
+          echo "$RELEASE_DESC" >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+          ls
+      - name: Update Release
+        uses: andelf/nightly-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: stable_latest
+          prerelease: false
+          name: Chrome portable & Chrome++ inside
+          body: ${{ env.RELEASE_DESC }}
+          files: |
+            Chrome_Portable.7z
+            Chrome_Plus.zip

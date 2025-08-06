@@ -1,0 +1,56 @@
+name: generate search engine configuration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'search_config.json'
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate search.json.mozlz4
+        run: |
+          pip install lz4
+          chmod +x ./tools/mozlz4_build.py
+          ./tools/mozlz4_build.py search_config.json
+          git checkout -- ./tools/mozlz4_build.py
+      - name: Generate importEngines.js
+        run: |
+          json_data=$(jq -c '.' search_config.json)
+          timestamp=$(date "+%Y-%m-%d %H:%M:%S")
+          echo "// $timestamp UTC+0" > importEngines.js
+          awk -v json="$json_data" '
+            BEGIN { replaced = 0 }
+            {
+              if (!replaced && $0 ~ /const[ \t]+engines[ \t]*=[ \t]*\[\];/) {
+                print "const engines = " json ";"
+                replaced = 1
+              } else {
+                print
+              }
+            }
+          ' src/importEngines.js >> importEngines.js
+      - name: Push to output branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan output          
+          git add search.json.mozlz4 importEngines.js
+          git commit -m "Auto-generated" || echo "No changes to commit"
+          git push -f origin output
