@@ -1,162 +1,172 @@
 [
-    {
-        "name": "Bing",
-        "keyword": "bing",
-        "url": "https://www.bing.com/search?q=%s"
-    },
-    {
-        "name": "Startpage",
-        "keyword": "sp",
-        "url": "https://www.startpage.com/sp/search?qadf=none&cat=web&pl=opensearch&language=english&query=%s"
-    },
-    {
-        "name": "知乎",
-        "keyword": "zh",
-        "url": "https://www.zhihu.com/search?type=content&q=%s"
-    },
-    {
-        "name": "淘宝",
-        "keyword": "tb",
-        "url": "https://s.taobao.com/search?q=%s"
-    },
-    {
-        "name": "微博",
-        "keyword": "wb",
-        "url": "http://s.weibo.com/weibo/%s?Refer=index"
-    },
-    {
-        "name": "哔哩哔哩",
-        "keyword": "b",
-        "url": "http://www.bilibili.com/search?keyword=%s"
-    },
-    {
-        "name": "Twitter",
-        "keyword": "t",
-        "url": "https://x.com/search?q=%s"
-    },
-    {
-        "name": "Youtube",
-        "keyword": "y",
-        "url": "https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch"
-    },
-    {
-        "name": "维基百科",
-        "keyword": "wk",
-        "url": "https://zh.wikipedia.org/w/index.php?search=%s"
-    },
-    {
-        "name": "Steam",
-        "keyword": "st",
-        "url": "https://store.steampowered.com/search/?term=%s"
-    },
-    {
-        "name": "GitHub",
-        "keyword": "gh",
-        "url": "https://github.com/search?q=%s"
-    },
-    {
-        "name": "Github Gist",
-        "keyword": "gg",
-        "url": "https://gist.github.com/search?q=%s&ref=opensearch"
-    },
-    {
-        "name": "SoulPlus",
-        "keyword": "hj",
-        "url": "https://bbs.imoutolove.me/search.php?step=2&method=AND&sch_area=0&f_fid=all&sch_time=all&orderway=postdate&asc=DESC&keyword=%s"
-    },
-    {
-        "name": "E-hentai",
-        "keyword": "eh",
-        "url": "https://e-hentai.org/?f_cats=0&advsearch=1&f_sname=on&f_stags=on&f_sfl=on&f_sfu=on&f_sft=on&f_search=%s"
-    },
-    {
-        "name": "Exhentai",
-        "keyword": "ex",
-        "url": "https://exhentai.org/?f_cats=0&advsearch=1&f_sname=on&f_stags=on&f_sfl=on&f_sfu=on&f_sft=on&f_search=%s"
-    },
-    {
-        "name": "紳士の庭",
-        "keyword": "gm",
-        "url": "https://gmgard.com/Blog/List?Query=%s"
-    },
-    {
-        "name": "绅士仓库",
-        "keyword": "ck",
-        "url": "https://cangku.moe/search/post?q=%s"
-    },
-    {
-        "name": "萌娘百科",
-        "keyword": "moe",
-        "url": "https://zh.moegirl.org.cn/index.php?search=%s"
-    },
-    {
-        "name": "里萌娘百科",
-        "keyword": "hmoe",
-        "url": "https://hmoegirl.com/index.php?search=%s"
-    },
-    {
-        "name": "番组计划",
-        "keyword": "bgm",
-        "url": "http://bgm.tv/subject_search/%s?cat=all"
-    },
-    {
-        "name": "Reddit",
-        "keyword": "rd",
-        "url": "https://www.reddit.com/search/?q=%s"
-    },
-    {
-        "name": "MDN Web",
-        "keyword": "mdn",
-        "url": "https://developer.mozilla.org/zh-CN/search?q=%s"
-    },
-    {
-        "name": "Stack Overflow",
-        "keyword": "so",
-        "url": "http://stackoverflow.com/search?q=%s"
-    },
-    {
-        "name": "小红书",
-        "keyword": "xhs",
-        "url": "https://www.xiaohongshu.com/search_result?keyword=%s"
-    },
-    {
-        "name": "DuckDuckGo",
-        "keyword": "ddg",
-        "url": "https://duckduckgo.com/?q=%s&atb=v307-2__"
-    },
-    {
-        "name": "天使动漫",
-        "keyword": "tsdm",
-        "url": "https://www.tsdm39.com/plugin.php?id=Kahrpba:search&authorid=0&fid=0&query=%s"
-    },
-    {
-        "name": "Google 翻译",
-        "keyword": "gtc",
-        "url": "https://translate.google.com/?sl=auto&tl=zh-CN&text=%s"
-    },
-    {
-        "name": "Google Translate",
-        "keyword": "gte",
-        "url": "https://translate.google.com/?sl=auto&tl=en&text=%s"
-    },
-    {
-        "name": "Google 翻訳",
-        "keyword": "gtj",
-        "url": "https://translate.google.com/?sl=auto&tl=ja&text=%s"
-    },
-    {
-        "name": "百度翻译",
-        "keyword": "tc",
-        "url": "https://fanyi.baidu.com/translate?lang=auto2zh&query=%s"
-    },
-    {
-        "name": "Baidu Translate",
-        "keyword": "te",
-        "url": "https://fanyi.baidu.com/translate?lang=auto2en&query=%s"
-    },
-    {
-        "name": "百度翻訳",
-        "keyword": "tj",
-        "url": "https://fanyi.baidu.com/translate?lang=auto2jp&query=%s"
-    }
+  {
+    "name": "Bing",
+    "keyword": "bing",
+    "url": "https://www.bing.com/search?q=%s"
+  },
+  {
+    "name": "Startpage",
+    "keyword": "sp",
+    "url": "https://www.startpage.com/sp/search?qadf=none&cat=web&pl=opensearch&language=english&query=%s"
+  },
+  {
+    "name": "知乎",
+    "keyword": "zh",
+    "url": "https://www.zhihu.com/search?type=content&q=%s"
+  },
+  {
+    "name": "淘宝",
+    "keyword": "tb",
+    "url": "https://s.taobao.com/search?q=%s"
+  },
+  {
+    "name": "微博",
+    "keyword": "wb",
+    "url": "http://s.weibo.com/weibo/%s?Refer=index"
+  },
+  {
+    "name": "哔哩哔哩",
+    "keyword": "b",
+    "url": "http://www.bilibili.com/search?keyword=%s"
+  },
+  {
+    "name": "Twitter",
+    "keyword": "t",
+    "url": "https://x.com/search?q=%s"
+  },
+  {
+    "name": "Youtube",
+    "keyword": "y",
+    "url": "https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch"
+  },
+  {
+    "name": "维基百科",
+    "keyword": "wk",
+    "url": "https://zh.wikipedia.org/w/index.php?search=%s"
+  },
+  {
+    "name": "Steam",
+    "keyword": "st",
+    "url": "https://store.steampowered.com/search/?term=%s"
+  },
+  {
+    "name": "GitHub",
+    "keyword": "gh",
+    "url": "https://github.com/search?q=%s"
+  },
+  {
+    "name": "Github Gist",
+    "keyword": "gg",
+    "url": "https://gist.github.com/search?q=%s&ref=opensearch"
+  },
+  {
+    "name": "SoulPlus",
+    "keyword": "hj",
+    "url": "https://bbs.imoutolove.me/search.php?step=2&method=AND&sch_area=0&f_fid=all&sch_time=all&orderway=postdate&asc=DESC&keyword=%s"
+  },
+  {
+    "name": "E-hentai",
+    "keyword": "eh",
+    "url": "https://e-hentai.org/?f_cats=0&advsearch=1&f_sname=on&f_stags=on&f_sfl=on&f_sfu=on&f_sft=on&f_search=%s"
+  },
+  {
+    "name": "Exhentai",
+    "keyword": "ex",
+    "url": "https://exhentai.org/?f_cats=0&advsearch=1&f_sname=on&f_stags=on&f_sfl=on&f_sfu=on&f_sft=on&f_search=%s"
+  },
+  {
+    "name": "紳士の庭",
+    "keyword": "gm",
+    "url": "https://gmgard.com/Blog/List?Query=%s"
+  },
+  {
+    "name": "绅士仓库",
+    "keyword": "ck",
+    "url": "https://cangku.moe/search/post?q=%s"
+  },
+  {
+    "name": "萌娘百科",
+    "keyword": "moe",
+    "url": "https://zh.moegirl.org.cn/index.php?search=%s"
+  },
+  {
+    "name": "番组计划",
+    "keyword": "bgm",
+    "url": "http://bgm.tv/subject_search/%s?cat=all"
+  },
+  {
+    "name": "Reddit",
+    "keyword": "re",
+    "url": "https://www.reddit.com/search/?q=%s"
+  },
+  {
+    "name": "MDN Web",
+    "keyword": "mdn",
+    "url": "https://developer.mozilla.org/zh-CN/search?q=%s"
+  },
+  {
+    "name": "Stack Overflow",
+    "keyword": "so",
+    "url": "http://stackoverflow.com/search?q=%s"
+  },
+  {
+    "name": "小红书",
+    "keyword": "xhs",
+    "url": "https://www.xiaohongshu.com/search_result?keyword=%s"
+  },
+  {
+    "name": "DuckDuckGo",
+    "keyword": "ddg",
+    "url": "https://duckduckgo.com/?q=%s&atb=v307-2__"
+  },
+  {
+    "name": "天使动漫",
+    "keyword": "tsdm",
+    "url": "https://www.tsdm39.com/plugin.php?id=Kahrpba:search&authorid=0&fid=0&query=%s"
+  },
+  {
+    "name": "LOFTER",
+    "keyword": "lo",
+    "url": "https://www.lofter.com/front/homesite/search?type=blog&q=%s"
+  },
+  {
+    "name": "米画师",
+    "keyword": "mhs",
+    "url": "https://www.mihuashi.com/search?q=%s"
+  },
+  {
+    "name": "百鸽卡查",
+    "keyword": "kc",
+    "url": "https://ygocdb.com/?search=%s"
+  },
+  {
+    "name": "Google 翻译",
+    "keyword": "gtc",
+    "url": "https://translate.google.com/?sl=auto&tl=zh-CN&text=%s"
+  },
+  {
+    "name": "Google Translate",
+    "keyword": "gte",
+    "url": "https://translate.google.com/?sl=auto&tl=en&text=%s"
+  },
+  {
+    "name": "Google 翻訳",
+    "keyword": "gtj",
+    "url": "https://translate.google.com/?sl=auto&tl=ja&text=%s"
+  },
+  {
+    "name": "百度翻译",
+    "keyword": "tc",
+    "url": "https://fanyi.baidu.com/translate?lang=auto2zh&query=%s"
+  },
+  {
+    "name": "Baidu Translate",
+    "keyword": "te",
+    "url": "https://fanyi.baidu.com/translate?lang=auto2en&query=%s"
+  },
+  {
+    "name": "百度翻訳",
+    "keyword": "tj",
+    "url": "https://fanyi.baidu.com/translate?lang=auto2jp&query=%s"
+  }
 ]
