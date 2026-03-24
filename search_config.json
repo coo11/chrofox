@@ -130,6 +130,11 @@
     "url": "https://www.tsdm39.com/plugin.php?id=Kahrpba:search&authorid=0&fid=0&query=%s"
   },
   {
+    "name": "動漫花園",
+    "keyword": "dmhy",
+    "url": "https://share.dmhy.org/topics/list?keyword=%s"
+  },
+  {
     "name": "LOFTER",
     "keyword": "lo",
     "url": "https://www.lofter.com/front/homesite/search?type=blog&q=%s"
