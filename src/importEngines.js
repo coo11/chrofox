@@ -18,7 +18,8 @@ const querySelectorS = (selector, root) => {
 const wait = (ms = 100) => new Promise(resolve => setTimeout(resolve, ms));
 const searchEngineChanger = {
   init() {
-    this.searchEnginePage = querySelectorS("settings-ui>>>#main>>>settings-basic-page>>>settings-search-page>>>settings-search-engines-page");
+    // this.searchEnginePage = querySelectorS("settings-ui>>>#main>>>settings-basic-page>>>settings-search-page>>>settings-search-engines-page");
+    this.searchEnginePage = querySelectorS("settings-ui>>>#main>>>settings-search-page-index>>>settings-search-engines-page");
     this.addButton = querySelectorS("#addSearchEngine", this.searchEnginePage);
   },
   async clearAllEngines(inactiveOnly = false, deactiveBuiltIn = true) {
