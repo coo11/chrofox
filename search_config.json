@@ -56,7 +56,7 @@
   },
   {
     "name": "Github Gist",
-    "keyword": "gg",
+    "keyword": "gi",
     "url": "https://gist.github.com/search?q=%s&ref=opensearch"
   },
   {
@@ -178,5 +178,15 @@
     "name": "百度翻訳",
     "keyword": "tj",
     "url": "https://fanyi.baidu.com/translate?lang=auto2jp&query=%s"
+  },
+  {
+    "name": "Google AI Mode",
+    "keyword": "ga",
+    "url": "https://www.google.com/search?q=%s&udm=50"
+  },
+  {
+    "name": "Google No AI",
+    "keyword": "gg",
+    "url": "https://www.google.com/search?q=%s&udm=14"
   }
 ]
