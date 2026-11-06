@@ -100,12 +100,17 @@
     "url": "https://bgm.tv/subject_search/%s?cat=all"
   },
   {
+    "name": "番组计划@Google",
+    "keyword": "bgmg",
+    "url": "https://www.google.com/search?udm=14&q=site%3Abgm.tv%2Fgroup+%s"
+  },
+  {
     "name": "Reddit",
     "keyword": "re",
     "url": "https://www.reddit.com/search/?q=%s"
   },
   {
-    "name": "MDN Web",
+    "name": "MDN",
     "keyword": "mdn",
     "url": "https://developer.mozilla.org/zh-CN/search?q=%s"
   },
@@ -127,7 +132,7 @@
   {
     "name": "天使动漫",
     "keyword": "tsdm",
-    "url": "https://www.tsdm39.com/plugin.php?id=Kahrpba:search&authorid=0&fid=0&query=%s"
+    "url": "https://www.tsdm39.com/plugin.php?id=txtsearch&kw=%s"
   },
   {
     "name": "動漫花園",
@@ -188,5 +193,30 @@
     "name": "Google No AI",
     "keyword": "gg",
     "url": "https://www.google.com/search?q=%s&udm=14"
+  },
+  {
+    "name": "Google Scholar",
+    "keyword": "gs",
+    "url": "https://scholar.google.com/scholar?q=%s"
+  },
+  {
+    "name": "抖音",
+    "keyword": "dy",
+    "url": "https://www.douyin.com/search/%s"
+  },
+  {
+    "name": "抖音搜索",
+    "keyword": "dys",
+    "url": "https://so.douyin.com/s?keyword=%s"
+  },
+  {
+    "name": "ChatGPT",
+    "keyword": "gpt",
+    "url": "https://chatgpt.com/?temporary-chat=true&prompt=%s"
+  },
+  {
+    "name": "V2EX@Google",
+    "keyword": "vtg",
+    "url": "https://www.google.com/search?udm=14&q=site%3Av2ex.com%2Ft+%s"
   }
 ]

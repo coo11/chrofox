@@ -30,6 +30,8 @@ jobs:
             mkdir -p ./Utils
             mv *.exe -t ./Utils
             mv ./Chrome-bin ./App
+            # The encoded payload preserves CRLF regardless of Git's checkout settings.
+            printf '%s' 'QEVDSE8gT0ZGDQpTRVRMT0NBTA0KDQpTRVQgIkNIUk9NRT0lfmRwMENocm9tZS1iaW5cY2hyb21lLmV4ZSINCg0KSUYgTk9UIEVYSVNUICIlQ0hST01FJSIgKA0KICAgIEVDSE8gRXJyb3I6IENocm9tZS1iaW5cY2hyb21lLmV4ZSBub3QgZm91bmQuDQogICAgUEFVU0UNCiAgICBFWElUIC9iIDENCikNCg0KcG93ZXJzaGVsbCAtTm9Qcm9maWxlIC1FeGVjdXRpb25Qb2xpY3kgQnlwYXNzIC1Db21tYW5kIF4NCiAgICAiJHBhdGggPSBbU3lzdGVtLklPLlBhdGhdOjpHZXRGdWxsUGF0aCgnJUNIUk9NRSUnKTsiIF4NCiAgICAiJHByb2NzID0gR2V0LUNpbUluc3RhbmNlIFdpbjMyX1Byb2Nlc3MgLUZpbHRlciBcIk5hbWUgPSAnY2hyb21lLmV4ZSdcIiB8IFdoZXJlLU9iamVjdCB7ICRfLkV4ZWN1dGFibGVQYXRoIC1lcSAkcGF0aCB9OyIgXg0KICAgICJmb3JlYWNoICgkcHJvYyBpbiAkcHJvY3MpIHsgU3RvcC1Qcm9jZXNzIC1JZCAkcHJvYy5Qcm9jZXNzSWQgLUZvcmNlIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVlIH0iDQoNClNUQVJUICIiICIlQ0hST01FJSIgLS1yZW1vdGUtZGVidWdnaW5nLXBvcnQ9OTIyMg0KDQpFTkRMT0NBTA0K' | base64 --decode > ./App/remote_debug_mode.bat
             7z a -mx9 Chrome_Portable.7z ./App ./Utils/ ./src/update.cmd
           }
 
